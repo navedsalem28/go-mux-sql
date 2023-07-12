@@ -1,0 +1,18 @@
+{
+  "file_name": "config/env_config.json",
+  "db_type": "",
+  "db_host": "",
+  "db_name": "",
+  "db_user": "",
+  "db_password": "",
+  "db_dns": "",
+  "ssl_certificate": "",
+  "ssl_certificate_key": "",
+  "assets_file_absolute": "/templates/",
+  "assets_file_relative": "templates/",
+  "port": "8080",
+  "ssl_Port": "",
+  "is_ssl": "0",
+  "user_name": "Admin",
+  "password": "Admin123$"
+}
