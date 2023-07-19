@@ -4,7 +4,6 @@ import (
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -31,17 +30,17 @@ func main() {
 		Error("No DB Connected")
 		//os.Exit(-1)
 	} else {
-		Config = make(map[string]string)
-		if !LoadConfiguration() {
-			os.Exit(-1)
-		}
+		//Config = make(map[string]string)
+		//if !LoadConfiguration() {
+		//	os.Exit(-1)
+		//}
 		Debug("DB Connected")
 		defer DisconnectDB()
-		params := make([]interface{}, 0)
-		Row, ok := GetSingleRow("SELECT NOW() AS 'Time'", params, "default")
-		if ok {
-			Info("DB Time " + Row["Time"])
-		}
+		//params := make([]interface{}, 0)
+		//Row, ok := GetSingleRow("SELECT NOW() AS 'Time'", params, "default")
+		//if ok {
+		//	Info("DB Time " + Row["Time"])
+		//}
 	}
 
 	routes := UpdateRoute()

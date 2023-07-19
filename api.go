@@ -2,6 +2,7 @@ package main
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 )
 
@@ -40,10 +41,18 @@ func LoginAPI(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
+	params := make([]interface{}, 0)
+	userData, ok := GetSingleRow("Select * from application_users where id='1'", params, "default")
+
+	Log("==========================")
+	fmt.Println(userData)
+	Log("==========================")
+
 	ResponseJSON["user_id"] = 1
 	ResponseJSON["full_name"] = "admin"
 
 	ResponseJSON["status"] = 200
+	ResponseJSON["user"] = userData
 
 	ResponseJSON["message"] = "Login Successful"
 	json.NewEncoder(w).Encode(ResponseJSON)
