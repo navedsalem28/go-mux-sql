@@ -66,13 +66,13 @@ Follow these steps to run the project using Docker:
 
 
 
-   ```bash
+```bash
 docker build -t api-image -f Dockerfile.api .                                
 docker build -t mysql-image -f Dockerfile.mysql . 
 docker network create mynetwork                                              
 docker run  --name mysql-container --network=mynetwork -e MYSQL_ROOT_PASSWORD=test1234$ mysql-image
 docker run  --name api-container --network=mynetwork -p 8080:8080 api-image
-   ```
+```
 
 
 
